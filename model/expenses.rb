@@ -7,11 +7,11 @@ class Expenses
 
 
 	def self.hydrate post_data
-    user = Expenses.new
-    user.id = post_data['id']
-    user.username = post_data['username']
-    user.expenses = post_data['expenses']
-    user.cost = post_data["cost"]
+    users = Expenses.new
+    users.id = post_data['id']
+    users.username = post_data['username']
+    users.expenses = post_data['expenses']
+    users.cost = post_data["cost"]
 
     user
   end
@@ -23,7 +23,7 @@ class Expenses
 		results = conn.exec(sql)
 		
 		# create an array of post objects
-    posts = results.map do |tuple| 
+    users = results.map do |tuple| 
     self.hydrate tuple
    end
    posts
