@@ -13,7 +13,7 @@ class Expenses
     users.expenses = post_data['expenses']
     users.cost = post_data["cost"]
 
-    user
+    users
   end
 
   #INDEX
@@ -23,7 +23,7 @@ class Expenses
 		results = conn.exec(sql)
 		
 		# create an array of post objects
-    users = results.map do |tuple| 
+    posts = results.map do |tuple| 
     self.hydrate tuple
    end
    posts

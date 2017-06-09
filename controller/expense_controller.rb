@@ -38,7 +38,7 @@ class ExpenseController < Sinatra::Base
  
  put '/:id'  do
    id = params[:id].to_i
-   post = Expenses.find id
+   users = Expenses.find id
 
    users.username = params[:username]
    users.expenses = params[:expenses]
