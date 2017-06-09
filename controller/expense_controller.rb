@@ -28,17 +28,17 @@ class ExpenseController < Sinatra::Base
   end
 	
 	post '/' do
-    user = Expenses.save
-    user.username = params[:username]
-    user.expenses = params[:expenses]
-    user.cost = params[:cost]
-    user.save
+    users = Expenses.new
+    users.username = params[:username]
+    users.expenses = params[:expenses]
+    users.cost = params[:cost]
+    users.save
     redirect "/"
   end
  
  put '/:id'  do
    id = params[:id].to_i
-   users = Expenses.update id
+   users = Expenses.find id
 
    users.username = params[:username]
    users.expenses = params[:expenses]
@@ -67,7 +67,6 @@ class ExpenseController < Sinatra::Base
   get '/:id/edit'  do
     id = params[:id].to_i
     @users = Expenses.find id
-    "edit"
     erb :'posts/edit'
   end
 
