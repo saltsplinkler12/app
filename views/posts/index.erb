@@ -1,0 +1,8 @@
+<h1>Welcome to the homepage</h1>
+
+<% @user.each do |user| %>
+<div>
+  <h3><a href="/<%= user.id %>"><%= user.username %></a></h3>
+  <p><%= user.expenses %></p><p><%= user.cost %></p>
+</div>
+<% end %>
