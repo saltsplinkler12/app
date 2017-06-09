@@ -18,10 +18,12 @@ class ExpenseController < Sinatra::Base
   end
   
 	get '/new'  do
+    @title = "NEW USER"
   	erb :"posts/new"  
 	end
     
   get '/:id' do
+     @title = "Current Expenses"
     id = params[:id].to_i
     @users = Expenses.find id
     erb :'posts/show'
@@ -65,6 +67,7 @@ class ExpenseController < Sinatra::Base
   end
     
   get '/:id/edit'  do
+    @title = "EDIT USER"
     id = params[:id].to_i
     @users = Expenses.find id
     erb :'posts/edit'
