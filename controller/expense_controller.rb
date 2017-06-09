@@ -28,7 +28,7 @@ class ExpenseController < Sinatra::Base
   end
 	
 	post '/' do
-    user = Expenses.new
+    user = Expenses.save
     user.username = params[:username]
     user.expenses = params[:expenses]
     user.cost = params[:cost]
@@ -38,7 +38,7 @@ class ExpenseController < Sinatra::Base
  
  put '/:id'  do
    id = params[:id].to_i
-   users = Expenses.find id
+   users = Expenses.update id
 
    users.username = params[:username]
    users.expenses = params[:expenses]
@@ -60,7 +60,7 @@ class ExpenseController < Sinatra::Base
 
   delete '/:id'  do
     id = params[:id].to_i
-    Expenses.destroy id
+    Expenses.delete id
     redirect "/"
   end
     
