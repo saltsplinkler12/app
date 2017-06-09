@@ -8,11 +8,12 @@ class ExpenseController < Sinatra::Base
 
   configure :development do
       register Sinatra::Reloader
+
   end
 	
 	get '/' do
      @title = "EXPENTRA"
-		@user = Expentra.all
+		@user = Expenses.all
   	erb :'posts/index'
   end
   
@@ -22,12 +23,12 @@ class ExpenseController < Sinatra::Base
     
   get '/:id' do
     id = params[:id].to_i
-    @user = Expentra.find id
+    @user = Expenses.find id
     erb :'posts/show'
   end
 	
 	post '/' do
-    user = Expentra.new
+    user = Expenses.new
     user.username = params[:username]
     user.expenses = params[:expenses]
     user.cost = params[:cost]
@@ -37,7 +38,18 @@ class ExpenseController < Sinatra::Base
  
  put '/:id'  do
    id = params[:id].to_i
-   post = Expentra.find id
+   post = Expenses.find id
+
+   user.username = params[:username]
+   user.expenses = params[:expenses]
+   user.cost = params[:cost]
+   user.update
+   redirect "/"
+  end
+  
+  put '/:id'  do
+   id = params[:id].to_i
+   post = Expenses.find id
 
    user.username = params[:username]
    user.expenses = params[:expenses]
@@ -46,26 +58,18 @@ class ExpenseController < Sinatra::Base
    redirect "/"
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  delete '/:id'  do
+    id = params[:id].to_i
+    Expenses.destroy id
+    redirect "/"
+  end
+    
+  get '/:id/edit'  do
+    # id = params[:id].to_i
+    # @user = Expenses.find id
+    "edit"
+    erb :'posts/edit'
+  end
 
 
 

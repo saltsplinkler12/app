@@ -1,13 +1,13 @@
-class Expentra
+class Expenses
 	attr_accessor :id, :username, :expenses, :cost
 
 	def self.open_connection
-		PG.connect(dbname:"expentra")
+		PG.connect(dbname:"Expenses")
 	end
 
 
 	def self.hydrate post_data
-    user = Expentra.new
+    user = Expenses.new
     user.id = post_data['id']
     user.username = post_data['username']
     user.expenses = post_data['expenses']
@@ -44,14 +44,14 @@ class Expentra
 
 	#CREATE
 	def save
-		conn = Expentra.open_connection
+		conn = Expenses.open_connection
 		sql = "INSERT INTO luxexp (username , expenses, cost) VALUES ( '#{self.username}', '#{self.expenses}','#{self.cost}')"
 		conn.exec(sql)
 	end
 
 	#UPDATE
 	def update
-   	conn = Expentra.open_connection
+   	conn = Expenses.open_connection
   	sql = "UPDATE luxexp SET username='#{self.username}', expenses='#{self.expenses}', cost='#{self.cost}'	 WHERE id = #{self.id}"
    	conn.exec(sql)
   end
