@@ -2,7 +2,7 @@ class Expenses
 	attr_accessor :id, :username, :expenses, :cost
 
 	def self.open_connection
-		PG.connect(dbname:"Expenses")
+		PG.connect(dbname:"expentra")
 	end
 
 
