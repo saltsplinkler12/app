@@ -3,6 +3,7 @@ class Expenses
 
 	def self.open_connection
 		url = ENV["HEROKU_POSTGRESQL_PUCE_URL"]
+		puts url
 		PG.connect(dbname:"expentra", hostaddr: url)
 	end
 
