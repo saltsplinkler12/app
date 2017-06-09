@@ -13,7 +13,6 @@ class ExpenseController < Sinatra::Base
 	
 	get '/' do
      @title = "EXPENTRA"
-		@users = Expenses.all
   	erb :'posts/index'
   end
   
@@ -21,6 +20,12 @@ class ExpenseController < Sinatra::Base
     @title = "NEW USER"
   	erb :"posts/new"  
 	end
+
+  get '/profile'  do
+    @title = "Profile"
+    @users = Expenses.all
+    erb :"posts/profile"  
+  end
     
   get '/:id' do
      @title = "Current Expenses"
