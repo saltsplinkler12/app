@@ -4,7 +4,9 @@ class ExpenseController < Sinatra::Base
   set :root, File.join(File.dirname(__FILE__), '..')
   
   # sets the view directory correctly
-  set :views, Proc.new { File.join(root, "views") } 
+  set :views, Proc.new { File.join(root, "views") }
+
+  set :public_folder, Proc.new {File.join(root,"public")}
 
   configure :development do
       register Sinatra::Reloader
@@ -30,7 +32,7 @@ class ExpenseController < Sinatra::Base
   get '/:id' do
      @title = "Current Expenses"
     id = params[:id].to_i
-    @user = Expenses.find id
+    @users = Expenses.find id
     erb :'posts/show'
   end
 	

@@ -1,3 +1,4 @@
+<%= erb(:'partials/navigation', :layout => false) %>
 <form method="post" action="/<%= @users.id %>">
     <input type="hidden" name="_method" value="put">
 
@@ -13,3 +14,4 @@
     <input type="submit" value="Submit">
     <button>DELETE</button>
 </form>
+
