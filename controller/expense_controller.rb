@@ -32,7 +32,7 @@ class ExpenseController < Sinatra::Base
   get '/:id' do
      @title = "Current Expenses"
     id = params[:id].to_i
-    @users = Expenses.find id
+    @user = Expenses.find id
     erb :'posts/show'
   end
 	
