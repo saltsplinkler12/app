@@ -1,6 +1,8 @@
 <% @users.each do |users| %>
 <div>
+
   <h3><a href="/<%= users.id %>"><%= users.username %></a></h3>
-  <p><%= users.expenses %></p><p><%= users.cost %></p>
+  <p><%= users.expenses %></p>
+  <p><%= users.cost %></p>
 </div>
 <% end %>
