@@ -28,3 +28,21 @@ body, h6 {
 	margin-left: 200px;
 	width: 100%;
 }
+footer{
+ 	position: absolute;
+ 	bottom: 65px;
+ 	left: 320px;
+ 
+ }
+#Nav-bar ul{
+		margin: 0;
+		padding: 0;
+		
+}
+#Nav-bar ul li{
+	list-style:none;
+	display: inline-block;
+	margin-right: 10px;
+	padding-left: 10px;
+	color: #06365f;
+}
