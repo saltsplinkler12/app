@@ -42,7 +42,7 @@ class ExpenseController < Sinatra::Base
     users.expenses = params[:expenses]
     users.cost = params[:cost]
     users.save
-    redirect "/"
+    redirect "/profile"
   end
  
  put '/:id'  do
@@ -53,7 +53,7 @@ class ExpenseController < Sinatra::Base
    users.expenses = params[:expenses]
    users.cost = params[:cost]
    users.update
-   redirect "/"
+   redirect "/profile"
   end
   
   put '/:id'  do
@@ -70,7 +70,7 @@ class ExpenseController < Sinatra::Base
   delete '/:id'  do
     id = params[:id].to_i
     Expenses.delete id
-    redirect "/"
+    redirect "/profile"
   end
     
   get '/:id/edit'  do

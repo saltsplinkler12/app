@@ -1,8 +1,7 @@
 <% @users.each do |users| %>
-<div>
-
-  <h3><a href="/<%= users.id %>"><%= users.username %></a></h3>
-  <p><%= users.expenses %></p>
-  <p><%= users.cost %></p>
-</div>
+<table class="table">
+  <td><h3><a href="/<%= users.id %>"><%= users.username %></a></h3></td>
+ 	<td><p><a href="/<%= users.id %>"><%= users.expenses %></p></a></td>
+ 	<td><p><a href="/<%= users.id %>"><%= users.cost %></p></a></td>
+</table>
 <% end %>
