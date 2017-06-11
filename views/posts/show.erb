@@ -1,6 +1,14 @@
-<h1><%= @user.username %></h1>
-<p><%= @user.expenses%></p>
-<p><%= @user.cost%></p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Expense Name</th>
+		<th>Cost</th>
+	</tr>
+		<td><%= @user.username %></td>
+		<td><%= @user.expenses%></td>
+		<td><%= @user.cost%></td>
+</table>
+
 <a href="/<%= @user.id %>/edit">edit</a>
 
 <form method="post" action="/<%= @user.id %>">

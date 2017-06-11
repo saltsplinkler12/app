@@ -1,14 +1,15 @@
 
 <form method="post" action="/<%= @users.id %>">
+    
     <input type="hidden" name="_method" value="put">
 
-    <label for="username">UserName</label>
+    <th="username">UserName</th>
     <input type="text" name="username" value="<%= @users.username %>">
 
     <label for="expenses">Expenses</label>
-    <textarea name="expenses"><%= @users.expenses %></textarea>
+    <input type="text" name="expense" value="<%= @users.expenses %>">
 
-    <label for="cost">Expenses</label>
+    <label for="cost">Cost</label>
     <textarea input="number"name="cost"><%= @users.cost %></textarea>
 
     <input type="submit" value="Submit">
