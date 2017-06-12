@@ -28,7 +28,7 @@ class ExpenseController < Sinatra::Base
     @amount = Expenses.total 
     erb :"posts/profile"  
   end
-    
+    #id is passed to find method which gets the row in the table. 
   get '/:id' do
     @title = "Current Expenses"
     id = params[:id].to_i
@@ -36,7 +36,7 @@ class ExpenseController < Sinatra::Base
     erb :'posts/show'
   end
 
-	#Param objects are taken from form of new.erb
+	# creating new user Param objects are taken from form of new.erb form.
 	post '/' do
     users = Expenses.new
     users.username = params[:username]
@@ -45,11 +45,11 @@ class ExpenseController < Sinatra::Base
     users.save
     redirect "/profile"
   end
- 
+
+ #updating a user. 
  put '/:id'  do
    id = params[:id].to_i
-   users = Expenses.find id
-
+   users = Expenses.find id #gets the whole row in the table. 
    users.username = params[:username]
    users.expenses = params[:expenses]
    users.cost = params[:cost]
