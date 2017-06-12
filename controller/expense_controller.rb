@@ -11,9 +11,9 @@ class ExpenseController < Sinatra::Base
   configure :development do
       register Sinatra::Reloader
   end
-	
+	# erb looks for erb file to the relative path from views folder 
 	get '/' do
-     @title = "EXPENTRA"
+    @title = "EXPENTRA"
   	erb :'posts/index'
   end
   
@@ -25,6 +25,7 @@ class ExpenseController < Sinatra::Base
   get '/profile'  do
     @title = "Profile"
     @users = Expenses.all
+    @amount = Expenses.total 
     erb :"posts/profile"  
   end
     
@@ -34,7 +35,8 @@ class ExpenseController < Sinatra::Base
     @user = Expenses.find id
     erb :'posts/show'
   end
-	
+
+	#Param objects are taken from form of new.erb
 	post '/' do
     users = Expenses.new
     users.username = params[:username]

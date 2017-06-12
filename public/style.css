@@ -74,7 +74,8 @@ span{
 
 
 @media only screen and (max-width: 500px) {
-    footer {
-        background-color: lightblue;
+    .contain{
+       margin:auto;
+       height:32vh;
     }
 }

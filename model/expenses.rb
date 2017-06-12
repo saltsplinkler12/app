@@ -6,7 +6,7 @@ class Expenses
 		PG.connect(dbname: db)
 	end
 
-
+	#users is a new instance of class Expenses containing parameters which have been set by post_data
 	def self.hydrate post_data
     users = Expenses.new
     users.id = post_data['id']
@@ -25,9 +25,9 @@ class Expenses
 		
 		# create an array of post objects
     posts = results.map do |tuple| 
-    self.hydrate tuple
-   end
-   posts
+	    self.hydrate tuple
+	  end
+	  posts
  end
 
 #SHOW
@@ -64,4 +64,11 @@ class Expenses
 		conn.exec(sql)
 	end
 
+	def self.total 
+		total = 0
+		self.all.each do |x|
+			total += x.cost.to_f
+		end
+		total
+	end
 end
