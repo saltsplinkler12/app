@@ -1,3 +1,4 @@
+
 body{
 	background-image: url(images/grey.jpg);
 	background-repeat: repeat;
@@ -13,6 +14,7 @@ body{
 		letter-spacing: -1px; 
 		line-height: 1;  
 	}
+
 .box{
 	margin-top: -539px;
 	margin-left: 416px;	
@@ -68,4 +70,11 @@ span{
 }
 .table{
 	background-color: red;
+}
+
+
+@media only screen and (max-width: 500px) {
+    footer {
+        background-color: lightblue;
+    }
 }

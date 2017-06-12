@@ -16,7 +16,7 @@ class Expenses
 
     users
   end
-
+  
   #INDEX
   def self.all
   	conn = self.open_connection
