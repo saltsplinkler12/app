@@ -55,17 +55,6 @@ class ExpenseController < Sinatra::Base
    redirect "/profile"
   end
   
-  # put '/:id'  do
-  #  id = params[:id].to_i
-  #  post = Expenses.find id
-
-  #  users.username = params[:username]
-  #  users.expenses = params[:expenses]
-  #  users.cost = params[:cost]
-  #  users.update
-  #  redirect "/"
-  # end
-
   delete '/:id'  do
     id = params[:id].to_i
     Expenses.delete id

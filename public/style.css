@@ -2,10 +2,10 @@ body{
 	background-image: url(images/grey.jpg);
 	background-repeat: repeat;
 }
-body, h6 {
-/*    font-size: 2rem;*/
+/*body, h6 {
+    font-size: 2rem;
 
-}
+}*/
 .logo{  
 		font-family: 'Helvetica Neue', sans-serif; 
 		font-size: 2px; 
@@ -28,11 +28,11 @@ body, h6 {
 }
 .nav{
 	background-color: #EAEAEA;
-	margin-left: 200px;
-	width: 100%;
+	margin-left: -12px;
+	width: 50%;
 }
 .nav-tabs:hover{
-	background-color: white	;
+	background-color: black	;
 }
 footer{
  	position: absolute;
