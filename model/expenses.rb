@@ -2,9 +2,8 @@ class Expenses
 	attr_accessor :id, :username, :expenses, :cost
 
 	def self.open_connection
-		url = ENV["HEROKU_POSTGRESQL_PUCE_URL"]
-		puts url
-		PG.connect(dbname:"expentra", hostaddr: url)
+		db = ENV["HEROKU_POSTGRESQL_PUCE_URL"] || "expentra"
+		PG.connect(dbname: db)
 	end
 
 
