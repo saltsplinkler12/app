@@ -10,7 +10,6 @@ class ExpenseController < Sinatra::Base
 
   configure :development do
       register Sinatra::Reloader
-
   end
 	
 	get '/' do
@@ -30,7 +29,7 @@ class ExpenseController < Sinatra::Base
   end
     
   get '/:id' do
-     @title = "Current Expenses"
+    @title = "Current Expenses"
     id = params[:id].to_i
     @user = Expenses.find id
     erb :'posts/show'
@@ -56,16 +55,16 @@ class ExpenseController < Sinatra::Base
    redirect "/profile"
   end
   
-  put '/:id'  do
-   id = params[:id].to_i
-   post = Expenses.find id
+  # put '/:id'  do
+  #  id = params[:id].to_i
+  #  post = Expenses.find id
 
-   users.username = params[:username]
-   users.expenses = params[:expenses]
-   users.cost = params[:cost]
-   users.update
-   redirect "/"
-  end
+  #  users.username = params[:username]
+  #  users.expenses = params[:expenses]
+  #  users.cost = params[:cost]
+  #  users.update
+  #  redirect "/"
+  # end
 
   delete '/:id'  do
     id = params[:id].to_i
@@ -79,7 +78,5 @@ class ExpenseController < Sinatra::Base
     @users = Expenses.find id
     erb :'posts/edit'
   end
-
-
 
 end
