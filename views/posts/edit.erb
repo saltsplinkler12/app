@@ -1,20 +1,19 @@
-
-<form method="post" action="/<%= @users.id %>">
-    
-    <input type="hidden" name="_method" value="put">
+<form method="post" action="/<%= @expense.id %>">
+<input type="hidden" name="_method" value="put">
     <div class="new">
     	<label for="username">Username</label>
-    	<input type="text" name="username" value="<%= @users.username %>">
+    	<input type="text" name="username" value="<%= @expense.username %>">
     </div>
+    
     <div class="new">
     	<label for="expenses">Expenses</label>
-    	<input type="text" name="expense" value="<%= @users.expenses %>">
+    	<input type="text" name="expenses" value="<%= @expense.expenses %>">
     </div>
+    
     <div class="new">
     	<label for="cost">Cost</label>
-    	<input type="number" name="cost" value= "<%= @users.cost %>">
+    	<input type="number" name="cost" value= "<%= @expense.cost %>">
     </div>
     <input type="submit" value="Submit">
-    
 </form>
 

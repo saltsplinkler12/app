@@ -1,17 +1,17 @@
-<table>
+<table class="table table-bordered">
 	<tr>
 		<th>Name</th>
 		<th>Expense Name</th>
 		<th>Cost</th>
 	</tr>
-		<td><%= @user.username %></td>
-		<td><%= @user.expenses%></td>
-		<td><%= @user.cost%></td>
+		<td><%= @expense.username %></td>
+		<td><%= @expense.expenses%></td>
+		<td><%= @expense.cost%></td>
 </table>
 
-<a href="/<%= @user.id %>/edit">edit</a>
+<a href="/<%= @expense.id %>/edit">edit</a>
 
-<form method="post" action="/<%= @user.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
+<form method="post" action="/<%= @expense.id %>">
+   <input type="hidden" name="_method" value="DELETE">
+   <input type="submit" value="Delete">
 </form>

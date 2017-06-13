@@ -1,7 +1,6 @@
 
 body{
-	background-image: url(images/grey.jpg);
-	background-repeat: repeat;
+ 	font-family: 'Annie Use Your Telescope';font-size: 22px;
 }
 .logo{  
 		font-family: 'Helvetica Neue', sans-serif; 
@@ -10,8 +9,8 @@ body{
 		letter-spacing: -1px; 
 		line-height: 1;  
 	}
-form{
-	line-height: 3.428571;
+.form-horizontal{
+	margin-left: 35px;
 }
 .box{
 	margin-top: -539px;
@@ -27,9 +26,9 @@ form{
 	height: 50vh;
 }
 .nav{
-	background-color: #EAEAEA;
+	background-color: orange;
 	margin-left: -12px;
-	width: 50%;
+	width: 100%;
 }
 .nav-tabs:hover{
 	background-color: black;
@@ -38,7 +37,6 @@ footer{
  	position: absolute;
  	bottom: -15px;
  	left: 320px;
- 
  }
 #Nav-bar{
 	margin-left: -298px;
@@ -46,15 +44,14 @@ footer{
 #Nav-bar ul{
 		margin-left: 250px;
 		padding: 23px;
-		margin-top: -117px;
-		
+		margin-top: -119px;
+		color: black;		
 }
 #Nav-bar ul li{
 	list-style:none;
 	display: inline-block;
 	margin-right: 20px;
 	padding-left: 10px;
-	color: #06365f;
 }
 span{
 	color: blue;
@@ -78,6 +75,9 @@ tbody{
 img{
 	margin-left: 30%;
 }
+h4{
+	color: red;
+}
 
 @media only screen and (max-width: 500px) {
     .box {
@@ -99,8 +99,7 @@ img{
 @media only screen and (max-width: 500px) {
     #Nav-bar{
        margin-left: -220px;
-       margin-bottom: -202px;
-       
+       margin-bottom: -202px;  
     }
 }
 @media only screen and (max-width: 500px) {

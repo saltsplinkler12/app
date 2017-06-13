@@ -1,16 +1,16 @@
-<table class="table">
+<table class="table table-bordered">
 	<tr>
 		<th>Name</th>
 		<th>Expense Name</th>
 		<th>Cost</th>
 	</tr>
-	<% @users.each do |users| %>
+	<% @expenses.each do |expense| %>
 	<tr>
-  	<td class="info"><a href="/<%= users.id %>"><%= users.username %></a></td>
- 		<td class="info"><a href="/<%= users.id %>"><%= users.expenses %></a></td>
- 		<td class="info"><a href="/<%= users.id %>"><%= users.cost %></a></td>
+  	<td class="info"><a href="/<%= expense.id %>"><%= expense.username %></a></td>
+ 		<td class="info"><a href="/<%= expense.id %>"><%= expense.expenses %></a></td>
+ 		<td class="info"><a href="/<%= expense.id %>"><%= expense.cost %></a></td>
  	</tr>
  	<% end %>
 </table>
 
-<h3>total:£<%= @amount%></h3>
+<h3>Total Amount £<%= @amount%></h3>

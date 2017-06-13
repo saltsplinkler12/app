@@ -24,49 +24,50 @@ class ExpenseController < Sinatra::Base
 
   get '/profile'  do
     @title = "Profile"
-    @users = Expenses.all
-    @amount = Expenses.total 
+    @expenses = Expense.all
+    @amount = Expense.total 
     erb :"posts/profile"  
   end
-    #id is passed to find method which gets the row in the table. 
+  
+  #id is passed to find method which gets the row in the table. 
   get '/:id' do
     @title = "Current Expenses"
     id = params[:id].to_i
-    @user = Expenses.find id
+    @expense = Expense.find id
     erb :'posts/show'
   end
 
-	# creating new user Param objects are taken from form of new.erb form.
+	# creating new user input, param objects are taken from form of new.erb form.
 	post '/' do
-    users = Expenses.new
-    users.username = params[:username]
-    users.expenses = params[:expenses]
-    users.cost = params[:cost]
-    users.save
+    expense = Expense.new
+    expense.username = params[:username]
+    expense.expenses = params[:expenses]
+    expense.cost = params[:cost]
+    expense.save
     redirect "/profile"
   end
 
  #updating a user. 
  put '/:id'  do
    id = params[:id].to_i
-   users = Expenses.find id #gets the whole row in the table. 
-   users.username = params[:username]
-   users.expenses = params[:expenses]
-   users.cost = params[:cost]
-   users.update
+   expense = Expense.find id #gets the whole row in the table. 
+   expense.username = params[:username]
+   expense.expenses = params[:expenses]
+   expense.cost = params[:cost]
+   expense.update
    redirect "/profile"
   end
   
   delete '/:id'  do
     id = params[:id].to_i
-    Expenses.delete id
+    Expense.delete id
     redirect "/profile"
   end
     
   get '/:id/edit'  do
     @title = "EDIT USER"
     id = params[:id].to_i
-    @users = Expenses.find id
+    @expense = Expense.find id
     erb :'posts/edit'
   end
 

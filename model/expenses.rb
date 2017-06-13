@@ -1,14 +1,24 @@
-class Expenses
+class Expense
 	attr_accessor :id, :username, :expenses, :cost
 
+		#Allowing connection to db and heroku
 	def self.open_connection
-		db = ENV["HEROKU_POSTGRESQL_PUCE_URL"] || "expentra"
-		PG.connect(dbname: db)
-	end
+    if ENV['DATABASE_URL']
+      PG.connect({
+        dbname: ENV['DB_NAME'],
+        user: ENV['DB_USER'],
+        password: ENV['DB_PASSWORD'],
+        host: ENV['DB_HOST'],
+        port: ENV['DB_PORT']
+      })
+    else
+      PG.connect(dbname: "expentra")
+    end
+  end
 
 	#users is a new instance of class Expenses containing parameters which have been set by post_data
 	def self.hydrate post_data
-    users = Expenses.new
+    users = Expense.new
     users.id = post_data['id']
     users.username = post_data['username']
     users.expenses = post_data['expenses']
@@ -45,14 +55,14 @@ class Expenses
 
 	#CREATE
 	def save
-		conn = Expenses.open_connection
+		conn = Expense.open_connection
 		sql = "INSERT INTO luxexp (username , expenses, cost) VALUES ( '#{self.username}', '#{self.expenses}','#{self.cost}')"
 		conn.exec(sql)
 	end
 
 	#UPDATE
 	def update
-   	conn = Expenses.open_connection
+   	conn = Expense.open_connection
   	sql = "UPDATE luxexp SET username='#{self.username}', expenses='#{self.expenses}', cost='#{self.cost}'	 WHERE id = #{self.id}"
    	conn.exec(sql)
   end
