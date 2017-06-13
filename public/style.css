@@ -3,10 +3,6 @@ body{
 	background-image: url(images/grey.jpg);
 	background-repeat: repeat;
 }
-/*body, h6 {
-    font-size: 2rem;
-
-}*/
 .logo{  
 		font-family: 'Helvetica Neue', sans-serif; 
 		font-size: 2px; 
@@ -45,7 +41,7 @@ footer{
  
  }
 #Nav-bar{
-	margin-left: -400px;
+	margin-left: -298px;
 }
 #Nav-bar ul{
 		margin-left: 250px;
@@ -83,9 +79,23 @@ tbody{
 
 @media only screen and (max-width: 500px) {
     .box {
-       margin:auto;
-       height:32vh;
-       background-color: red;
+       margin-left: -4px;
+       margin-top: -533px;
     }
 }
-
+@media only screen and (max-width: 500px) {
+    img {
+       width: 137px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .contain {
+       width: 0px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #Nav-bar {
+       margin-left: 590px;
+       margin-bottom: 211px;
+    }
+}
