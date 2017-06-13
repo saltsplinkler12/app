@@ -103,8 +103,9 @@ tbody{
 }
 @media only screen and (max-width: 500px) {
     #Nav-bar ul{
-       margin-bottom: -202px;
-       width: 200px;
+       margin-top: -380px;
+       margin-left: -99px;
+  	   width: 352px;
     }
 }
 
