@@ -75,7 +75,9 @@ span{
 tbody{
 	color:green;
 }
-
+img{
+	margin-left: 30%;
+}
 
 @media only screen and (max-width: 500px) {
     .box {
