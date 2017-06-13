@@ -11,7 +11,7 @@ class DatabaseSetup
     end
     def self.go
         conn = self.open_connection
-        sql = "CREATE TABLE luxexp (
+        sql = "CREATE TABLE luxexp (    
            id SERIAL PRIMARY KEY, 
            username VARCHAR(20),
            expenses VARCHAR(20), 
