@@ -81,6 +81,7 @@ tbody{
     .box {
        margin-left: -4px;
        margin-top: -533px;
+       width: 371px;
     }
 }
 @media only screen and (max-width: 500px) {
