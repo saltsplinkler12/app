@@ -97,6 +97,7 @@ tbody{
 @media only screen and (max-width: 500px) {
     #Nav-bar {
        margin-left: 590px;
-       margin-bottom: 211px;
+       margin-bottom: 268px;
+       width: 455px
     }
 }
